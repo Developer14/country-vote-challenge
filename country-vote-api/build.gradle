@@ -5,13 +5,19 @@ plugins {
 }
 
 group = 'dev.loopstudio'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 description = 'Loopstudio challenge'
 
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
+}
+
+
+jar {
+	//archiveBaseName = 'country-vote-api'
+	archiveFileName = 'country-vote-api'
 }
 
 repositories {

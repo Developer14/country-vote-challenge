@@ -2,6 +2,40 @@
 
 REST API intended to serve the front application.
 
+## Assumptions
+ 
+* Persistence is not specified, so I decided to use an in-memory database
+* Countries retrieved from the public api did not have an id, so assuming that countries do not change their names, country name was used as the unique identifier.
+
+## Design Choices
+
+For the main functional requirement of listing country details and their votes I identified that a merge of user data and countries had to be performed. In order to achieve that merge operation I found two possible approaches, 1) persist country details in another relational table, or 2) merge both datasources programmatically. I chose the latter for simplicity and given that country data is rather static and can be stored in a cache.
+
+Standard layered architecture package structure to organise code
+
+Layers:
+- config: spring configuration classes
+- controller: HTTP endpoints
+- service: Business logic
+- repository: Data access
+- models: Database entity models
+- dto: Transferencia de datos
+- client: client classes for external api
+- exception: exception handling classes
+- constant: common app constants
+
+I decided to use a relational database to persist user data (personal info and favorite country). The table structure is created through hibernate annotations (in-memory db)
+
+I implemented spring cache (default in-memory) to reduce the number of executions to external countries api assuming that it's static data that does not change often.
+
+## Trade-offs
+
+Standard synchronous code in spring applications is simpler to write and understand. Blocking operations can exhaust threads under heavy I/O and other approaches like reactive programming offer better scalability.
+
+For the purpose of the challenge a default in-memory cache provided by spring was used instead of a dedicated cache storage like Redis.
+
+Caching adds complexity in managing cache invalidation and consistency
+
 ## Getting Started
 
 ### Prerequisites
@@ -33,7 +67,7 @@ The API will be available at `http://localhost:8080/country-votes/api/v1`.
 
 ## Swagger
 
-Swagger docs and testing at `http://localhost:8080/country-votes/swagger-ui/index.html`
+Swagger docs and API testing at `http://localhost:8080/country-votes/swagger-ui/index.html`
 
 ## Technologies Used
 
