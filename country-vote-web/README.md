@@ -1,59 +1,50 @@
-# CountryVoteWeb
+# Country Vote Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+SPA frontend for Country Vote Challenge.
 
-## Development server
+## Table of Contents
+*   [Design Choices](#design-choices)
+*   [Trade-offs](#trade-offs)
+*   [Features](#features)
+*   [Getting Started](#getting-started)
 
-To start a local development server, run:
+## Design Choices
 
-```bash
-ng serve
-```
+Followed new official Angular Style Conventions (https://angular.dev/style-guide) to make it easier to maintain and scale applications.
+Standalone components
+State managements with signals
+Project folder structure based on features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Trade-offs
 
-## Code scaffolding
+Some parts of the application could be improved, like error messages in user-form template may be confusing because of error messages boilerplate, and a directive can be implemented to manage error messages logic.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+I decided not to use any component library for simplicity and ease to meet design prototypes in figma. This could slow down implementing new features as complex ui components would have to be created from scratch.
 
-```bash
-ng generate component component-name
-```
+Few unit tests due to time constraints.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+## Features
 
-## Building
+*   **Feature 1:** User form for country votes.
+*   **Feature 2:** Table listing of 10 most voted countries with input search.
 
-To build the project run:
+## Getting Started
 
-```bash
-ng build
-```
+### Prerequisites
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Ensure you have the following installed on your machine:
+*   [Node.js](https://nodejs.org) (v24+)
+*   [npm](https://www.npmjs.com) (v11+) or [Yarn](https://yarnpkg.com)
+*   [Angular CLI](https://angular.dev/tools/cli) (v21+)
+*   [Angular] (https://angular.dev/) (21+)
 
-## Running unit tests
+### Running the Application
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+    `npm install`
+    `npm run start`
+Alternatively, if you are using local angular installation with npx, you can run the application with:
+    
+    `npm run start-npx`
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The web app will be available at `http://localhost:4200/`.

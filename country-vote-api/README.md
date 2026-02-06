@@ -2,6 +2,17 @@
 
 REST API intended to serve the front application.
 
+## Table of Contents
+*   [Assumptions](#assumptions)
+*   [Design Choices](#design-choices)
+*   [Trade-offs](#trade-offs)
+*   [Getting Started](#getting-started)
+*   [Prerequisites](#prerequisites)
+*   [Running the Application](#running-the-application)
+*   [API Endpoints](#api-endpoints)
+*   [Swagger](#swagger)
+*   [Technologies Used](#technologies-used)
+
 ## Assumptions
  
 * Persistence is not specified, so I decided to use an in-memory database
@@ -28,9 +39,11 @@ I decided to use a relational database to persist user data (personal info and f
 
 I implemented spring cache (default in-memory) to reduce the number of executions to external countries api assuming that it's static data that does not change often.
 
+Standard synchronous code in spring applications for simplicity
+
 ## Trade-offs
 
-Standard synchronous code in spring applications is simpler to write and understand. Blocking operations can exhaust threads under heavy I/O and other approaches like reactive programming offer better scalability.
+Model/Dto mapping implemented in services which in this case is not a problem for the scope of the application, but can lead to confusion and hard to maintain if application grows.
 
 For the purpose of the challenge a default in-memory cache provided by spring was used instead of a dedicated cache storage like Redis.
 
