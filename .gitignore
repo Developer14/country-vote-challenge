@@ -1,0 +1,14 @@
+
+# IDEs and editors
+/country-vote-web/.idea
+/country-vote-web/.project
+/country-vote-web/.classpath
+/country-vote-web/.c9
+/country-vote-web/*.launch
+/country-vote-web/.settings
+/country-vote-web/*.sublime-workspace
+
+
+# Visual Studio Code
+country-vote-web/.vscode
+

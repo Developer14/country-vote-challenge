@@ -1,0 +1,69 @@
+<div class="cv-card">
+
+  @if (status && status === 'success') {
+  <div class="banner-success">
+    <i class="cv-icon-svg cv-success-icon" style="margin-right: 15px;"></i>
+    <span>Your vote was successfully submitted</span>
+    <button type="button" class="submit-btn" (click)="reset()">
+      Reset
+    </button>
+  </div>
+  }
+  @else {
+
+  @if (status && status !== 'success') {
+  <div class="banner-error">{{ status }}</div>
+  }
+
+  <h4 class="cv-form-title">Vote your Favourite Country</h4>
+  <form class="horizontal-form" [formGroup]="form">
+    <div style="display: flex;">
+
+
+      <div class="cv-row" style="flex-grow: 1;">
+        <div class="cv-col-12">
+          <div class="form-group cv-user-form-element">
+            <input type="text" id="name" name="name" placeholder="Name" required formControlName="name">
+            @if (form.get('name')?.touched && form.get('name')?.invalid) {
+            <div class="error-message">Name is required.</div>
+            }
+          </div>
+
+          <div class="form-group cv-user-form-element">
+            <input type="text" id="email" name="email" placeholder="Email" required formControlName="email">
+            @if (form.get('email')?.touched && form.get('email')?.invalid) {
+            <div class="error-message">
+              @if (form.get('email')?.errors?.['required']) {
+              Email is required.
+              }
+              @if (form.get('email')?.errors?.['email']) {
+              Please enter a valid email address.
+              }
+            </div>
+            }
+          </div>
+
+          <div class="form-group cv-user-form-element">
+            <input type="text" id="country" name="country" placeholder="Country" required formControlName="country">
+            @if (form.get('country')?.touched && form.get('country')?.invalid) {
+            <div class="error-message">
+              Country is required.
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="cv-row">
+        <div class="cv-col-12 form-group">
+          <button type="submit" class="submit-btn" [disabled]="!form.valid" [class]="{'submit-disabled': !form.valid}"
+            (click)="submitForm()">
+            Submit Vote
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+  }
+
+</div>

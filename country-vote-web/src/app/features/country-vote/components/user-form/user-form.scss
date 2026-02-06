@@ -1,0 +1,27 @@
+.cv-form-title {
+  margin-bottom: 10px;
+}
+
+.cv-user-form-element {
+  margin-right: 10px;
+}
+
+.banner-success {
+  display: flex;
+  align-items: center;
+
+  span {
+    flex-grow: 1;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0px;
+
+  }
+}
+
+.cv-success-icon {
+  background-size: contain;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBkPSdNNy41IDEyTDEwLjUgMTVMMTYuNSA5TTIyIDEyQzIyIDE3LjUyMjggMTcuNTIyOCAyMiAxMiAyMkM2LjQ3NzE1IDIyIDIgMTcuNTIyOCAyIDEyQzIgNi40NzcxNSA2LjQ3NzE1IDIgMTIgMkMxNy41MjI4IDIgMjIgNi40NzcxNSAyMiAxMlonIHN0cm9rZT0nIzNGREU5Micgc3Ryb2tlLXdpZHRoPScyJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLz48L3N2Zz4=");
+}

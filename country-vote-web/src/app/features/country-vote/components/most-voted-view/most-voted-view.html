@@ -1,0 +1,34 @@
+<div class="most-voted-view-container">
+  <h1 class="title">Top 10 Most Voted Countries</h1>
+
+  <div class="search-container search-input-wrapper">
+    <i class="cv-search-icon"></i>
+    <input type="text" placeholder="Search Country, Capital City, Region or Subregion" class="search-input"
+      [(ngModel)]="searchText" (input)="filterCountries()">
+  </div>
+
+  <div class="cv-card">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Capital City</th>
+          <th>Region</th>
+          <th>Sub Region</th>
+          <th>Votes</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (countryVote of filteredCountryVotesArray; track $index) {
+        <tr>
+          <td>{{ countryVote.country }}</td>
+          <td>{{ countryVote.capital }}</td>
+          <td>{{ countryVote.region }}</td>
+          <td>{{ countryVote.subregion }}</td>
+          <td>{{ countryVote.votes }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+server:
+  servlet:
+    context-path: /country-votes
+spring:
+  application:
+    name: country-vote-api
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:country-vote
+    driver-class-name: org.h2.Driver
+    username: loopstudio
+    password: loopstudio
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+#business properties
+countryapi:
+  countriesBaseUrl: https://restcountries.com/v3.1
+  countriesVersion: v3.1
+  countriesResource: /all?fields=name,capital,region,subregion
